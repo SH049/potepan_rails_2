@@ -3,8 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# Devise
+gem 'devise'
 # 日本語に対応
 gem 'rails-i18n'
 # webpackerをインストールするため
