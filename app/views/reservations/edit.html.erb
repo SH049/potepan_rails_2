@@ -1,0 +1,30 @@
+<h3 class="back">編集</h3>
+
+<%= render "shared/error", obj: @room %>
+
+<%= form_with model: @reservation do |f| %>
+  <div class="each-reservation">
+    <div class="date">
+      <div>
+        <p><%= f.label :checkin ,"チェックイン" %></p>
+        <p><%= f.date_field :checkin %></p>
+      </div>
+      <div>
+        <p><%= f.label :checkout ,"チェックアウト" %></p>
+        <p><%= f.date_field :checkout %></p>
+      </div>
+    <div>
+
+    <div class="each-reservation-content">
+        <p><%= f.label :people ,"人数" %></p>
+        <p class="form-controll">
+            <%= f.text_field :people %>
+        </p>
+    </div>
+    <div class="save">
+      <p class="button cansell"><%= link_to "キャンセル", reservations_path, class:"link" %></p>
+      <p><%= f.submit "保存", class:"button" %></p>
+  </div>
+  </div>
+
+<% end %>

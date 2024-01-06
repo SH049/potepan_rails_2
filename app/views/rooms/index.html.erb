@@ -11,7 +11,7 @@
             <%= room.room_detail %>
             <%= room.room_fee %>
             <%= link_to "詳細はこちら", room %>
-            <%= link_to "編集", [:edit, room] %>
+            <%= link_to "編集", edit_room_path(room) %>
             <%= link_to "削除", room, method: :delete, data: { confirm: "本当に削除しますか？" } %>
         </div>
     <% end %>

@@ -28,7 +28,7 @@ class RoomsController < ApplicationController
   def update
     @room = Room.find(params[:id])
     if @room.update(room_params)
-      flash[:notice] = "アカウントを編集しました"
+      flash[:notice] = "施設を編集しました"
       redirect_to rooms_path
     else
       render "edit"
