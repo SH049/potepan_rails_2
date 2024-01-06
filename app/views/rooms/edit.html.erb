@@ -1,0 +1,40 @@
+<h3 class="back">新規追加</h3>
+
+<%= render "shared/error", obj: @room %>
+
+<%= form_with model: @room do |f| %>
+  <div class="each-room">
+    <div class="each-room-content">
+        <p><%= f.label :room_name ,"施設名" %></p>
+        <p class="form-controll">
+            <%= f.text_field :room_name %>
+        </p>
+    </div>
+
+    <div class="each-room-content">
+      <div>
+        <p><%= f.label :room_detail ,"施設詳細" %></p>
+        <p><%= f.text_area :room_detail %></p>
+      </div>
+    </div>
+
+    <div class="each-room-content">
+        <p><%= f.label :room_fee ,"料金" %></p>
+        <p class="form-controll">
+            <%= f.text_field :room_fee %>
+        </p>
+    </div>
+
+    <div class="each-room-content">
+        <p><%= f.label :room_address ,"住所" %></p>
+        <p class="form-controll">
+            <%= f.text_field :room_address %>
+        </p>
+    </div>
+    <div class="save">
+      <p class="button cansell"><%= link_to "キャンセル", rooms_path, class:"link" %></p>
+      <p><%= f.submit "保存", class:"button" %></p>
+  </div>
+  </div>
+
+<% end %>
