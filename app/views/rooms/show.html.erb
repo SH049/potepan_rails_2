@@ -1,0 +1,26 @@
+<p><%= @room.room_image %></p>
+<p><%= @room.room_name %></p>
+<p><%= @room.room_fee %></p>
+<p><%= @room.room_address %></p>
+<p><%= @room.room_detail %></p>
+
+<h3>予約</h3>
+
+<%= form_with model: @reservation do |f| %>
+   <table>
+     <tr>
+       <th><%= f.label :checkin, "チェックイン" %></th>
+       <td><%= f.date_field :checkin %></td>
+       <th><%= f.label :checkput, "チェックアウト" %></th>
+       <td><%= f.date_field :checkout %></td>
+       <th><%= f.label :people, "人数" %></th>
+       <td><%= f.text_field :people %></td>
+     </tr>
+   </table>
+   <%= f.hidden_field :room_id, value: @room.id %>
+   <div>
+       <%= f.submit "予約する"%>
+   </div>
+ <% end %>
+
+<p class="button cansell"><%= link_to "一覧に戻る", rooms_path, class:"link" %></p>

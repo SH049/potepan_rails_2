@@ -1,0 +1,5 @@
+
+<%= @room.room_name %>
+<%= @reservation&.checkin&.strftime('%Y/%m/%d') %>
+<%= @reservation&.checkout&.strftime('%Y/%m/%d') %>
+<%= @reservation.people %>
