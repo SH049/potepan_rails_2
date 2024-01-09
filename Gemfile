@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
+# debug
+gem 'pry-rails'
+# 検索
+gem 'ransack'
 # Devise
 gem 'devise'
 # 日本語に対応

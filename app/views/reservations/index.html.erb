@@ -4,14 +4,27 @@
 
 <div>
     <% @reservations.each do |reservation| %>
-        <div>
+        <tr>
+            <th>チェックイン</th>
+            <td>
             <%= reservation&.checkin&.strftime('%Y/%m/%d') %>
+            </td>
+            <th>チェックアウト</th>
+            <td>
             <%= reservation&.checkout&.strftime('%Y/%m/%d') %>
+            </td>
+            <th>宿泊人数</th>
+            <td>
             <%= reservation.people %>
-            <%= link_to "詳細はこちら", reservation %>
-            <%= link_to "編集", edit_room_path(reservation) %>
-            <%= link_to "削除", reservation, method: :delete, data: { confirm: "本当に削除しますか？" } %>
-        </div>
+            </td>
+            <th>部屋番号</th>
+            <td>
+                <%= reservation.room_id %></p>
+            </td>
+            <td><%= link_to "詳細はこちら", reservation %></td>
+            <td><%= link_to "編集", edit_reservation_path(reservation) %></td>
+            <td><%= link_to "削除", reservation, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+        </tr>
     <% end %>
 </div>
 

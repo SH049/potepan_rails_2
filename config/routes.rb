@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :rooms do
+    resources :reservations
+  end
+  post '/rooms/:room_id/reservations(.:format)' => 'reservations#create'
   get 'users/profile' => 'users#show'
   get 'reservations' => 'reservations#index'
   get 'rooms' => 'rooms#index'

@@ -5,10 +5,12 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    @user = current_user
+    # @room = Room.find(params[:id])
   end
 
   def create
-    @reservation = Reservation.new(reservation_params)
+    @reservation = current_user.reservations.new(reservation_params)
     if @reservation.save
       flash[:notice] = "予約を完了しました"
       redirect_to reservations_path
@@ -46,6 +48,6 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:checkin, :checkout, :people)
+    params.require(:reservation).permit(:checkin, :checkout, :people, :room_id)
   end
 end

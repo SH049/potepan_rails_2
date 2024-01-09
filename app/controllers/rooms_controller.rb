@@ -1,14 +1,17 @@
 class RoomsController < ApplicationController
   def index
+    # @q = Rooms.ransack(params[:q])
+    # @rooms = @q.result(distinct: true)
     @rooms = Room.all
   end
 
   def new
     @room = Room.new
+    @user = current_user
   end
 
   def create
-    @room = Room.new(room_params)
+    @room = current_user.rooms.new(room_params)
     if @room.save
       flash[:notice] = "施設を登録しました"
       redirect_to rooms_path
@@ -19,6 +22,7 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+    @user = current_user
     @reservation = Reservation.new
   end
 

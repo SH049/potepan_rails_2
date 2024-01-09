@@ -31,10 +31,11 @@
             <%= f.text_field :room_address %>
         </p>
     </div>
+    <%= f.hidden_field :user_id, value: @user.id %>
     <div class="save">
       <p class="button cansell"><%= link_to "キャンセル", rooms_path, class:"link" %></p>
       <p><%= f.submit "保存", class:"button" %></p>
-  </div>
+    </div>
   </div>
 
 <% end %>
