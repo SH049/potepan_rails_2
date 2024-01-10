@@ -18,6 +18,7 @@
     </tr>
   </table>
   <%= f.hidden_field :room_id, value: @room.id %>
+  <%= f.hidden_field :total_fee, value: @room.room_fee %>
   <%= f.hidden_field :user_id, value: @user.id %>
    <div>
        <%= f.submit "予約する"%>
