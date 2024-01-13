@@ -8,7 +8,12 @@
         <%= f.label :profile %><br>
         <%= f.text_field :profile, autofocus: true, autocomplete: "profile" %>
     </div>
-    
+    <div class="field">
+    <%= f.label :profile_image %><br />
+    <%= f.file_field :profile_image, autofocus: true, autocomplete: "profile_image" %>
+    <%= f.hidden_field :room_image_cache %>
+    </div>
+
     <%= f.hidden_field :current_password, autocomplete: "current-password" %>
 
   <div class="actions">

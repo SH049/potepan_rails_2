@@ -1,6 +1,11 @@
 ja:
   activerecord:
     attributes:
+      room:
+        room_name: 施設名
+        room_detail: 施設詳細
+        room_fee: 料金
+        room_address: 住所
       user:
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン

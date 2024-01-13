@@ -13,7 +13,8 @@ class IntrosController < ApplicationController
       flash[:notice] = "プロフィールを編集しました"
       redirect_to user
     else
-      render "edit"
+      @user = current_user
+      render "profile/edit"
     end
   end
 end
