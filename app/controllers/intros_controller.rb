@@ -1,8 +1,4 @@
-class UsersController < ApplicationController
-  def index
-    @user = current_user
-  end
-
+class IntrosController < ApplicationController
   def show
     @user = current_user
   end
@@ -14,7 +10,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update
-      flash[:notice] = "施設を編集しました"
+      flash[:notice] = "プロフィールを編集しました"
       redirect_to user
     else
       render "edit"
