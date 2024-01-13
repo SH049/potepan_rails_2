@@ -3,6 +3,7 @@ class RoomsController < ApplicationController
     # @q = Rooms.ransack(params[:q])
     # @rooms = @q.result(distinct: true)
     @rooms = Room.all
+    @rooms = @rooms.where('room_address LIKE ?', "%#{params[:search]}%") if params[:search].present?
   end
 
   def new
