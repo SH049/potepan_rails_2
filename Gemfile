@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
+# 画像
+gem 'carrierwave'
 # debug
 gem 'pry-rails'
 # 検索

@@ -31,6 +31,13 @@
             <%= f.text_field :room_address %>
         </p>
     </div>
+
+    <div class="each-room-content">
+      <%= f.label :room_image%>
+      <%= f.file_field :room_image%>
+      <%= f.hidden_field :room_image_cache %>
+    </div>
+
     <div class="save">
       <p class="button cansell"><%= link_to "キャンセル", rooms_path, class:"link" %></p>
       <p><%= f.submit "保存", class:"button" %></p>
