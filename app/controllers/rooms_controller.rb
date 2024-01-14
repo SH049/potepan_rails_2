@@ -48,6 +48,12 @@ class RoomsController < ApplicationController
     flash[:notice] = "施設を削除しました"
     redirect_to rooms_path
   end
+
+  def own
+    @rooms = Room.where(user_id: current_user.id)
+    @user = current_user
+  end
+
   private
 
   def room_params

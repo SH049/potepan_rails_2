@@ -1,0 +1,20 @@
+<div class="top-list">
+<h3>一覧</h3>
+</div>
+
+
+<div>
+    <% @rooms.each do |room| %>
+        
+        <div>
+            <%= room.room_name %>
+            <%= room.room_address %>
+            <%= room.room_detail %>
+            <%= room.room_fee  %>
+            <span>ユーザーID<%= room.user_id %></span> 
+            <%= link_to "詳細はこちら", room  %>
+            <%= link_to "編集", edit_room_path(room)  %>
+            <%= link_to "削除", room, method: :delete, data: { confirm: "本当に削除しますか？" } %> 
+        </div>
+    <% end  %>
+</div>

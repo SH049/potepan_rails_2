@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.where(user_id: current_user.id)
+    @user = current_user
   end
 
   def new

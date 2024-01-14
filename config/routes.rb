@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   get 'intros/show'
+  get 'rooms/own' => 'rooms#own'
   resources :rooms do
     resources :reservations
   end
   # post '/rooms/:room_id/reservations(.:format)' => 'reservations#create'
+  
   get 'users/profile/edit' => 'intros#edit'
   get 'users/profile' => 'intros#show'
   get 'users/account' => 'users#index'

@@ -11,7 +11,7 @@ class IntrosController < ApplicationController
     @user = current_user
     if @user.update
       flash[:notice] = "プロフィールを編集しました"
-      redirect_to user
+      redirect_to 'users/profile'
     else
       @user = current_user
       redirect_to intro_path(@user.id)
