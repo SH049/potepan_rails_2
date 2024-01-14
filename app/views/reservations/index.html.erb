@@ -19,11 +19,19 @@
             </td>
             <th>合計金額</th>
             <td>
-            <%= reservation.total_fee * reservation.people * (reservation&.checkout - reservation&.checkin) %>
+            <%= reservation.room.room_fee * reservation.people * (reservation&.checkout - reservation&.checkin).to_i %>
             </td>
             <th>部屋番号</th>
             <td>
                 <%= reservation.room_id %></p>
+            </td>
+            <th>画像</th>
+            <td>
+                <% if reservation.room.room_image? %>
+                <%= image_tag reservation.room.room_image.url, :size => '50x40' %>
+                    <% else %>
+                <%= image_tag ("default_room.png"), :size => '50x40' %>
+                    <% end %>
             </td>
             <th>予約確定日時</th>
             <td>

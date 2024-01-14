@@ -14,7 +14,7 @@ class IntrosController < ApplicationController
       redirect_to user
     else
       @user = current_user
-      render "profile/edit"
+      redirect_to intro_path(@user.id)
     end
   end
 end
