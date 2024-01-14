@@ -15,7 +15,8 @@ class ReservationsController < ApplicationController
       flash[:notice] = "予約を完了しました"
       redirect_to reservations_path
     else
-      render "new"
+      flash[:errors] = @reservation.errors.full_messages.join(', ')
+      redirect_to room_path(@reservation.room_id)
     end
   end
 
@@ -48,6 +49,6 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:checkin, :checkout, :people, :room_id, :total_fee)
+    params.require(:reservation).permit(:checkin, :checkout, :people, :room_id, :total_fee, :user_id)
   end
 end

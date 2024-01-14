@@ -6,6 +6,10 @@ ja:
         room_detail: 施設詳細
         room_fee: 料金
         room_address: 住所
+      reservation:
+        checkin: チェックイン日
+        checkout: チェックアウト日
+        people: 人数
       user:
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン

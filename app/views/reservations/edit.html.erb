@@ -1,5 +1,12 @@
 <h3 class="back">編集</h3>
 
+<p><%= @reservation.room_id %></p>
+<% if @reservation.room_image? %>
+  <%= image_tag @reservation.room_image.url %>
+<% else %>
+  <%= image_tag ("default_room.png"), :size => '300x200' %>
+<% end %>
+
 <%= form_with model: @reservation do |f| %>
   <div class="each-reservation">
     <div class="date">
