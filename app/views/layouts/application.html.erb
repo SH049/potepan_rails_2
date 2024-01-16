@@ -18,7 +18,7 @@
       <div class="header-menus">
       <% if user_signed_in? %>
         <li>
-          <%= link_to("ログイン名", "#") %>
+          <%= link_to(current_user.name, "#") %>
         </li>
         <li>
           <%= link_to("施設の新規登録", new_room_path) %></p>

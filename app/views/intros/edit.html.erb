@@ -1,5 +1,7 @@
-<%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+<%= form_with model: @user, url: intro_path(@user), local: true do |f| %>
  
+  <%= render "shared/error", obj: @user %>
+
     <div class="field">
         <%= f.label :name %><br>
         <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
@@ -11,7 +13,7 @@
     <div class="field">
     <%= f.label :profile_image %><br/>
     <%= f.file_field :profile_image, autofocus: true, autocomplete: "profile_image" %>
-    <%= f.hidden_field :room_image_cache %>
+    <%= f.hidden_field :profile_image_cache %>
     </div>
 
     <%= f.hidden_field :current_password, autocomplete: "current-password" %>
