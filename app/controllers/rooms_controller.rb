@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
   def index
     # @q = Rooms.ransack(params[:q])
     # @rooms = @q.result(distinct: true)

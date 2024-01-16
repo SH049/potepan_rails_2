@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   def index
     @user = current_user
   end
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update
-      flash[:notice] = "施設を編集しました"
+      flash[:notice] = "ユーザーを編集しました"
       redirect_to user
     else
       render "edit"
