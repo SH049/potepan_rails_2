@@ -17,7 +17,8 @@ class ReservationsController < ApplicationController
       redirect_to reservations_path
     else
       flash[:errors] = @reservation.errors.full_messages.join(', ')
-      redirect_to room_path(@reservation.room_id)
+      @room = @reservation.room
+      render "rooms/show"
     end
   end
 
