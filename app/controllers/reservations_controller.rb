@@ -16,7 +16,6 @@ class ReservationsController < ApplicationController
       flash[:notice] = "予約を完了しました"
       redirect_to reservations_path
     else
-      flash[:errors] = @reservation.errors.full_messages.join(', ')
       @room = @reservation.room
       render "rooms/show"
     end

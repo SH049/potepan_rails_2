@@ -24,11 +24,7 @@
       <td><%= f.text_field :people %></td>  
     </tr>
   </table>
-  <% if flash[:errors] %>
-  <div class="alert alert-danger">
-    <%= flash[:errors] %>
-  </div>
-<% end %>
+  <%= render "shared/error", obj: @reservation %>
   <%= f.hidden_field :room_id, value: @room.id %>
   <%# <%= f.hidden_field :user_id, value: @user.id %>
    <div>
