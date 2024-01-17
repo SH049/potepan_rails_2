@@ -3,7 +3,7 @@
 
 
 <p><%= @room.room_name %></p>
-<p><%= @room.room_fee %></p>
+<p>¥<%= @room.room_fee.to_s(:delimited) %></p>
 <p><%= @room.room_address %></p>
 <p><%= @room.room_detail %></p>
 <% if @room.room_image? %>

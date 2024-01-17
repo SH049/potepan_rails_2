@@ -10,7 +10,7 @@
             <%= room.room_name %>
             <%= room.room_address %>
             <%= room.room_detail %>
-            <%= room.room_fee  %>
+            ¥<%= room.room_fee.to_s(:delimited)  %>~
             <span>ユーザーID<%= room.user_id %></span> 
             <%= link_to "詳細はこちら", room  %>
             <%= link_to "編集", edit_room_path(room)  %>

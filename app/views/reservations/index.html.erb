@@ -19,7 +19,7 @@
             </td>
             <th>合計金額</th>
             <td>
-            <%= reservation.room.room_fee * reservation.people * (reservation&.checkout - reservation&.checkin).to_i %>
+            ¥<%= (reservation.room.room_fee * reservation.people * (reservation&.checkout - reservation&.checkin).to_i).to_s(:delimited) %>
             </td>
             <th>部屋番号</th>
             <td>
