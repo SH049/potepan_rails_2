@@ -21,6 +21,7 @@ header {
 .header-menus>:nth-of-type(1){
     margin-right: auto;
 }
+
 //javascript
 #menuToggle {
     padding-top: 20px;
@@ -64,4 +65,19 @@ header {
     margin: 0;
 }
 
-// home
+// ヘッダー
+footer {
+    background-color: rgb(16, 9, 75);
+    height:200px;
+    color: white;
+}
+.footer-logo{
+    margin: 0;
+    width: 200px;
+    padding-top: 20px;
+    padding-left:18px;
+}
+footer p {
+    padding-left: 30px;
+    margin: 0;
+}
