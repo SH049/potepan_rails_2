@@ -5,3 +5,12 @@
 
 <%= render "shared/search" %>
 </div>
+
+<section>
+    <div class="area-section">
+        <p><%= link_to(image_tag("tokyo.jpeg", size: '300x400'), rooms_path(search: '東京')) %></p>
+        <p><%= link_to(image_tag("osaka.jpeg", size: '300x400'), rooms_path(search: '大阪')) %></p>
+        <p><%= link_to(image_tag("kyoto.jpeg", size: '300x400'), rooms_path(search: '京都')) %></p>
+        <p><%= link_to(image_tag("sapporo.jpeg", size: '300x400'), rooms_path(search: '札幌')) %></p>
+    </div>
+</section>
