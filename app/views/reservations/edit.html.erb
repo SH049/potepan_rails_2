@@ -2,7 +2,6 @@
 
 <%= render "shared/error", obj: @reservation %>
 
-<p><%= @reservation.room_id %></p>
 <% if @reservation.room.room_image? %>
   <%= image_tag @reservation.room.room_image.url, :size => '300x200' %>
 <% else %>
