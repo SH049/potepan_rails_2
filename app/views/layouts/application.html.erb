@@ -3,6 +3,7 @@
   <head>
     <title>ScheduleBook</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://kit.fontawesome.com/16220d5f5d.js" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,9 +13,9 @@
 
   <body>
     <header>
-      <div class="header-logo">
-        <%= link_to("Potepan Share", "/") %>
-      </div>
+     
+        <%= link_to(image_tag("header-logo.png", class: "header-logo"), '/') %>
+      
       <div class="header-menus">
       <% if user_signed_in? %>
         <li>
@@ -49,5 +50,8 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+    <footer>
+
+    </footer>
   </body>
 </html>

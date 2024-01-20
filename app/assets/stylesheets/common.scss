@@ -1,15 +1,29 @@
 // 共通
 // ヘッダー
-
 body {
     margin: 0;
 }
-
+header {
+    background-color: rgb(16, 9, 75);
+}
+.header-logo {
+    width: 200px;
+    margin:0;
+    padding-top: 30px;
+    padding-left:20px;
+    padding-bottom:0;
+}
 .header-menus {
     display: flex;
     justify-content: flex-end;
     gap:10px;
     list-style: none;
+}
+.notice {
+    margin: 0;
+}
+.alert {
+    margin: 0;
 }
 
 // home

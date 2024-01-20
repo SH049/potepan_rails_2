@@ -1,16 +1,35 @@
 <div class="first-view">
-<h1>Potepan Shareで
-まだ体験したことのない
-旅をしよう</h1>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <h1>Potepan Shareで<br>
+    まだ体験したことのない<br>
+    旅をしよう</h1>
 
-<%= render "shared/search" %>
+    <div class="search-form">
+        <%= form_with url: rooms_path, method: :get, local: true do |form| %>
+            <p><%= form.text_field :search, class: "search-form-text" %><p>
+            <p><%= form.submit '検索', name: nil, class: "search-form-button" %></p>
+        <% end %>
+    </div>
 </div>
 
 <section>
     <div class="area-section">
-        <p><%= link_to(image_tag("tokyo.jpeg", size: '300x400'), rooms_path(search: '東京')) %></p>
-        <p><%= link_to(image_tag("osaka.jpeg", size: '300x400'), rooms_path(search: '大阪')) %></p>
-        <p><%= link_to(image_tag("kyoto.jpeg", size: '300x400'), rooms_path(search: '京都')) %></p>
-        <p><%= link_to(image_tag("sapporo.jpeg", size: '300x400'), rooms_path(search: '札幌')) %></p>
+        <div class="each-area">
+            <%= link_to(image_tag("tokyo.jpeg", class: "each-area-image"), rooms_path(search: '東京')) %>
+            <p class="each-area-text">東京<br><i class="fa-solid fa-location-dot"></i>Tokyo</p>
+        </div>
+        <div class="each-area">
+            <%= link_to(image_tag("osaka.jpeg",  class: "each-area-image"), rooms_path(search: '大阪')) %>
+            <p class="each-area-text">大阪<br><i class="fa-solid fa-location-dot"></i>Osaka</p>
+        </div>
+        <div class="each-area">
+            <%= link_to(image_tag("kyoto.jpeg",  class: "each-area-image"), rooms_path(search: '京都')) %>
+            <p class="each-area-text">京都<br><i class="fa-solid fa-location-dot"></i>Kyoto</p>
+        </div>
+        <div class="each-area">
+            <%= link_to(image_tag("sapporo.jpeg",  class: "each-area-image"), rooms_path(search: '札幌')) %>
+            <p class="each-area-text">札幌<br><i class="fa-solid fa-location-dot"></i>Sapporo</p>
+        </div>
     </div>
 </section>
