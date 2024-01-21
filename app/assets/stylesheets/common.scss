@@ -147,3 +147,29 @@ footer p {
     border: 0.1px solid #F58220;
     border-radius: 5px;
 }
+// room-show
+.back-link {
+    margin-left: 10px;
+    text-decoration: none;
+    color: rgb(53, 53, 255);
+}
+.room-reservation {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.room-reservation-image {
+    width: 500px;
+    height: 300px;
+}
+.room-reservation-content {
+    background-color: #fccea6;
+    padding:10px 50px;
+}
+.room-reservation-name {
+    display: flex;
+    justify-content: space-between;
+}
+.room-reservation-table th {
+    text-align: left;
+}

@@ -1,35 +1,45 @@
 <%= render "shared/search" %>
 
+<p class="button cansell"><%= link_to "\uf060 戻る", :back, class:"fa back-link" %></p>
 
+<div class="room-reservation">
+  <div>
+    <% if @room.room_image? %>
+      <%= image_tag @room.room_image.url, class:'room-reservation-image' %>
+    <% else %>
+      <%= image_tag ("default_room.png"), class:'room-reservation-image' %>
+    <% end %>
+  </div>
+  <div class="room-reservation-content">
+    <div class="room-reservation-name">
+      <p><%= @room.room_name %></p>
+      <p>¥<%= @room.room_fee.to_s(:delimited) %></p>
+    </div>
+    <p><%= @room.room_address %></p>
+    <p><%= @room.room_detail %></p>
+    <%= form_with model: @reservation do |f| %>
+      <table class="room-reservation-table">
+          <thead>
+            <tr>
+              <th><%= f.label :checkin, "チェックイン" %></th>
+              <th><%= f.label :checkout, "チェックアウト" %></th>
+              <th><%= f.label :people, "人数" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= f.date_field :checkin %></td>
+              <td><%= f.date_field :checkout %></td>
+              <td><%= f.text_field :people %></td>  
+          </tr>
+          </tbody>
+      </table>
+      <%= render "shared/error", obj: @reservation %>
+      <%= f.hidden_field :room_id, value: @room.id %>
+      <div>
+          <%= f.submit "予約する"%>
+      </div>
+    <% end %>
+  </div>
+ </div>
 
-<p><%= @room.room_name %></p>
-<p>¥<%= @room.room_fee.to_s(:delimited) %></p>
-<p><%= @room.room_address %></p>
-<p><%= @room.room_detail %></p>
-<% if @room.room_image? %>
-  <%= image_tag @room.room_image.url, :size => '300x200' %>
-<% else %>
-  <%= image_tag ("default_room.png"), :size => '300x200' %>
-<% end %>
-<h3>予約</h3>
-
-<%= form_with model: @reservation do |f| %>
-  <table>
-    <tr>
-      <th><%= f.label :checkin, "チェックイン" %></th>
-      <td><%= f.date_field :checkin %></td>
-      <th><%= f.label :checkout, "チェックアウト" %></th>
-      <td><%= f.date_field :checkout %></td>
-      <th><%= f.label :people, "人数" %></th>
-      <td><%= f.text_field :people %></td>  
-    </tr>
-  </table>
-  <%= render "shared/error", obj: @reservation %>
-  <%= f.hidden_field :room_id, value: @room.id %>
-  <%# <%= f.hidden_field :user_id, value: @user.id %>
-   <div>
-       <%= f.submit "予約する"%>
-   </div>
- <% end %>
-
-<p class="button cansell"><%= link_to "一覧に戻る", rooms_path, class:"link" %></p>
