@@ -65,11 +65,12 @@ header {
     margin: 0;
 }
 
-// ヘッダー
+// フッター
 footer {
     background-color: rgb(16, 9, 75);
     height:200px;
     color: white;
+    margin-top: 50px;
 }
 .footer-logo{
     margin: 0;
@@ -80,4 +81,10 @@ footer {
 footer p {
     padding-left: 30px;
     margin: 0;
+}
+
+// 共通検索フォーム
+.common-search-form {
+    background-color: rgb(164, 153, 153);
+    display: flex;
 }

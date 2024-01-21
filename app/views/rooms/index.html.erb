@@ -5,9 +5,10 @@
 
 <%= render "shared/search" %>
 
+<h2><%= @rooms.count %>件見つかりました</h2>
+
 <div>
-    <% @rooms.each do |room| %>
-        
+    <% @rooms.each do |room| %>   
         <div>
             <% if room.room_image? %>
                 <%= image_tag room.room_image.url, size: '300x200' %>

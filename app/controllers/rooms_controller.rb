@@ -1,10 +1,16 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   def index
-    # @q = Rooms.ransack(params[:q])
-    # @rooms = @q.result(distinct: true)
     @rooms = Room.all
-    @rooms = @rooms.where('room_address LIKE ?', "%#{params[:search]}%") if params[:search].present?
+    if params[:search_address].present?
+      search_address_condition = "%#{params[:search_address]}%"
+      @rooms = @rooms.where('room_address LIKE ?', search_address_condition)
+    end
+
+    if params[:search_name_detail].present?
+      search_name_detail_condition = "%#{params[:search_name_detail]}%"
+      @rooms = @rooms.where('room_name LIKE ? OR room_detail LIKE ?', search_name_detail_condition, search_name_detail_condition)
+    end
   end
 
   def new
