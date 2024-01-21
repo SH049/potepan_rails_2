@@ -252,3 +252,32 @@ footer p {
     border: 0.1px solid #dad9d9;
     border-radius: 5px;
 }
+// account
+// account設定（user-index）
+.profile-change{
+    display: flex;
+    justify-content: flex-start;
+}
+.profile-change-links p{
+    margin: 0;
+    padding-left:10px;
+}
+.profile-change-link {
+    display: block;
+    border:1px solid rgb(184, 176, 176);
+    text-decoration: none;
+    color:black;
+    padding:10px;
+    width:100px;
+}
+.red {
+    color:rgb(255, 59, 59);
+}
+.acount-config {
+    padding-left: 200px;
+}
+.account-edit {
+    display: flex;
+    justify-content: center;
+    gap:500px;
+}
