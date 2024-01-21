@@ -1,47 +1,50 @@
 <div class="top-list">
-<h3>一覧</h3>
+<h3 class="content-title">予約済み一覧</h3>
 </div>
-
-<div>
-    <% @reservations.each do |reservation| %>
+<table class="table-own">
+    <thead>
         <tr>
-            <th>チェックイン</th>
-            <td>
-            <%= reservation&.checkin&.strftime('%Y/%m/%d') %>
-            </td>
-            <th>チェックアウト</th>
-            <td>
-            <%= reservation&.checkout&.strftime('%Y/%m/%d') %>
-            </td>
-            <th>宿泊人数</th>
-            <td>
-            <%= reservation.people %>
-            </td>
-            <th>合計金額</th>
-            <td>
-            ¥<%= (reservation.room.room_fee * reservation.people * (reservation&.checkout - reservation&.checkin).to_i).to_s(:delimited) %>
-            </td>
-            <th>部屋番号</th>
-            <td>
-                <%= reservation.room_id %></p>
-            </td>
             <th>画像</th>
-            <td>
-                <% if reservation.room.room_image? %>
-                <%= image_tag reservation.room.room_image.url, :size => '50x40' %>
-                    <% else %>
-                <%= image_tag ("default_room.png"), :size => '50x40' %>
-                    <% end %>
-            </td>
+            <th>施設名</th>
+            <th>紹介文</th>
+            <th>合計金額</th>
+            <th>チェックイン</th>
+            <th>チェックアウト</th>
             <th>予約確定日時</th>
-            <td>
-                <%= reservation&.created_at&.strftime('%Y/%m/%d') %></p>
-            </td>
-            <td><%= link_to "詳細はこちら", reservation %></td>
-            <td><%= link_to "編集", edit_reservation_path(reservation) %></td>
-            <td><%= link_to "削除", reservation, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
-        </tr>
-    <% end %>
-</div>
-
-<p><%= link_to "新規追加", new_reservation_path, class:"link" %></p>
+            <th>編集</th>
+        </tr>    
+    <thead>
+    <tbody>
+        <% @reservations.each do |reservation| %>
+            <tr>
+                <td>
+                    <% if reservation.room.room_image? %>
+                    <%= image_tag reservation.room.room_image.url, class:'room-own-image' %>
+                        <% else %>
+                    <%= image_tag ("default_room.png"), class:'room-own-image' %>
+                        <% end %>
+                </td>
+                <td>
+                    <%= reservation.room.room_name %>
+                </td>
+                <td>
+                    <%= reservation.room.room_detail %>
+                </td>
+                <td>
+                    ¥<%= (reservation.room.room_fee * reservation.people * (reservation&.checkout - reservation&.checkin).to_i).to_s(:delimited) %>
+                </td>
+                <td>
+                    <%= reservation&.checkin&.strftime('%Y/%m/%d') %>
+                </td>
+                <td>
+                    <%= reservation&.checkout&.strftime('%Y/%m/%d') %>
+                </td>
+                <td>
+                    <%= reservation&.created_at&.strftime('%Y/%m/%d') %></p>
+                </td>
+                <td><%= link_to "再予約", edit_reservation_path(reservation) %></td>
+                <td><%= link_to "削除", reservation, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
