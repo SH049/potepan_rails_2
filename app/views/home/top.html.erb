@@ -17,19 +17,19 @@
     <h2>おすすめのエリア</h2>
     <div class="area-section">
         <div class="each-area">
-            <%= link_to(image_tag("tokyo.jpeg", class: "each-area-image"), rooms_path(search: '東京')) %>
+            <%= link_to(image_tag("tokyo.jpeg", class: "each-area-image"), rooms_path(search_address: '東京')) %>
             <p class="each-area-text">東京<br><i class="fa-solid fa-location-dot"></i>Tokyo</p>
         </div>
         <div class="each-area">
-            <%= link_to(image_tag("osaka.jpeg",  class: "each-area-image"), rooms_path(search: '大阪')) %>
+            <%= link_to(image_tag("osaka.jpeg",  class: "each-area-image"), rooms_path(search_address: '大阪')) %>
             <p class="each-area-text">大阪<br><i class="fa-solid fa-location-dot"></i>Osaka</p>
         </div>
         <div class="each-area">
-            <%= link_to(image_tag("kyoto.jpeg",  class: "each-area-image"), rooms_path(search: '京都')) %>
+            <%= link_to(image_tag("kyoto.jpeg",  class: "each-area-image"), rooms_path(search_address: '京都')) %>
             <p class="each-area-text">京都<br><i class="fa-solid fa-location-dot"></i>Kyoto</p>
         </div>
         <div class="each-area">
-            <%= link_to(image_tag("sapporo.jpeg",  class: "each-area-image"), rooms_path(search: '札幌')) %>
+            <%= link_to(image_tag("sapporo.jpeg",  class: "each-area-image"), rooms_path(search_address: '札幌')) %>
             <p class="each-area-text">札幌<br><i class="fa-solid fa-location-dot"></i>Sapporo</p>
         </div>
     </div>

@@ -1,21 +1,37 @@
 <%= render "shared/search" %>
 
-<h2><%= @rooms.count %>件見つかりました</h2>
+<h2 class="room-count"><%= @rooms.count %>件見つかりました</h2>
 
-<div>
+<div class="room-index">
     <% @rooms.each do |room| %>   
-        <div>
-            <% if room.room_image? %>
-                <%= image_tag room.room_image.url, size: '300x200' %>
-            <% else %>
-                <%= image_tag ("default_room.png"), size: '300x200' %>
-            <% end %>
-            <%= room.room_name %>
-            <%= room.room_address %>
-            <%= room.room_detail %>
-            ¥<%= room.room_fee.to_s(:delimited)  %>
-            <span>ユーザーID<%= room.user_id %></span> 
-            <%= link_to "詳細はこちら", room  %>
+        <div class="each-room">
+            <p class="each-room-image">
+                <% if room.room_image? %>
+                    <%= image_tag room.room_image.url, class: 'each-room-image' %>
+                <% else %>
+                    <%= image_tag ("default_room.png"), class: 'each-room-image' %>
+                <% end %>
+            <p>
+            <div class="each-room-contents">
+                <p>
+                    <%= room.room_name %>
+                </p>
+                <p>
+                    <%= room.room_address %>
+                </p>
+                <p>
+                    <%= room.room_detail %>
+                </p>
+            </div>
+            <div class="each-room-detail">
+                <p>
+                ¥<%= room.room_fee.to_s(:delimited)  %>~
+                </p>
+                <p>
+                    <%= link_to "詳細はこちら", room, class: "each-room-button"  %>
+                </p>
+            </div>
+            
         </div>
     <% end  %>
 </div>

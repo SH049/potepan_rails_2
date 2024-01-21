@@ -104,3 +104,46 @@ footer p {
     border-radius: 5px;
     margin: 30px 0;
 }
+// 各ページ
+// room
+// room-index
+.room-count {
+    margin-left: 5%;
+}
+.room-index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.each-room {
+    background-color: rgb(214, 209, 209);
+    width: 380px;
+    margin-bottom:50px;
+    border-radius: 5%;
+}
+.each-room-image {
+    margin: 0;
+    border-radius: 5% 5% 0 0;
+    width: 380px;
+    height: 250px;
+}
+.each-room-contents {
+    margin-left: 45px;
+}
+.each-room-detail {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-bottom: 10px;
+}
+.each-room-button {
+    text-decoration: none;
+    color: white;
+    background-color: #F58220;
+    padding:10px;
+    width: 300px;
+    height: 40px;
+    border: 0.1px solid #F58220;
+    border-radius: 5px;
+}

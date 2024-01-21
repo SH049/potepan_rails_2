@@ -3,36 +3,36 @@
 <%= render "shared/error", obj: @room %>
 
 <%= form_with model: @room do |f| %>
-  <div class="each-room">
-    <div class="each-room-content">
+  <div class="room">
+    <div class="room-content">
         <p><%= f.label :room_name ,"施設名" %></p>
         <p class="form-controll">
             <%= f.text_field :room_name %>
         </p>
     </div>
 
-    <div class="each-room-content">
+    <div class="room-content">
       <div>
         <p><%= f.label :room_detail ,"施設詳細" %></p>
         <p><%= f.text_area :room_detail %></p>
       </div>
     </div>
 
-    <div class="each-room-content">
+    <div class="room-content">
         <p><%= f.label :room_fee ,"料金" %></p>
         <p class="form-controll">
             <%= f.text_field :room_fee %>
         </p>
     </div>
 
-    <div class="each-room-content">
+    <div class="room-content">
         <p><%= f.label :room_address ,"住所" %></p>
         <p class="form-controll">
             <%= f.text_field :room_address %>
         </p>
     </div>
 
-    <div class="each-room-content">
+    <div class="room-content">
       <%= f.label :room_image, "部屋画像" %>
       <%= f.file_field :room_image%>
       <%= f.hidden_field :room_image_cache %>
