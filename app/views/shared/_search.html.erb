@@ -1,5 +1,5 @@
 <%= form_with url: rooms_path, class: "common-search-form", method: :get, local: true do |form| %>
-  <p><%= form.text_field :search_address, class: "common-search-form-text", placeholder: "エリア名を入力" %></p>
-  <p><%= form.text_field :search_name_detail, class: "common-search-form-text", placeholder: "キーワード名を入力" %></p>
-  <p><%= form.submit 'Search', name: nil, class: "common-search-form-button" %></p>
+  <p><%= form.text_field :search_address, class: "common-search-form-text fa", placeholder: "\uf3c5 エリア名を入力" %></p>
+  <p><%= form.text_field :search_name_detail, class: "common-search-form-text fa", placeholder: "\uf002 キーワード名を入力" %></p>
+  <p><%= form.submit '検索', name: nil, class: "common-search-form-button" %></p>
 <% end %>

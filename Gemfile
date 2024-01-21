@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
+#font-awesome
+gem 'font-awesome-sass'
 # jquery
 gem 'jquery-rails'
 # 画像

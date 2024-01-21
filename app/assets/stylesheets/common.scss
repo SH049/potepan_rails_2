@@ -87,4 +87,20 @@ footer p {
 .common-search-form {
     background-color: rgb(164, 153, 153);
     display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.common-search-form-text {
+    border: rgb(167, 167, 167) 0.5px solid;
+    border-radius: 5px;
+    width: 250px;
+    height: 40px;
+    margin: 30px 0;
+}
+.common-search-form-button {
+    width: 100px;
+    height: 40px;
+    border: rgb(206, 203, 203) 0.5px solid;
+    border-radius: 5px;
+    margin: 30px 0;
 }
