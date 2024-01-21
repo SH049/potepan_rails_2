@@ -173,3 +173,69 @@ footer p {
 .room-reservation-table th {
     text-align: left;
 }
+.room-reservation-submit {
+    padding-top:10px;
+}
+.reservation-submit-button {
+    text-decoration: none;
+    color: white;
+    background-color: #F58220;
+    padding:10px;
+    width: 430px;
+    height: 40px;
+    border: 0.1px solid #F58220;
+    border-radius: 5px;
+}
+// room-own //自分が登録した部屋
+.room-own-image {
+    width: 100px;
+    height: 60px;
+}
+//reservation
+//reservation-edit
+.room-reservation-edit {
+    width:500px;
+    margin: 0 auto;
+}
+.room-reservation-edit-content {
+    background-color: #fccea6;
+    width:500px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+.room-reservation-edit-chekin {
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+}
+.room-reservation-edit-form-p {
+    margin: 0;
+}
+.room-reservation-edit-chekin p {
+    line-height: 1px;
+}
+.room-reservation-edit-form {
+    width:300px;
+}
+.submit-button {
+    text-decoration: none;
+    color: white;
+    background-color: #F58220;
+    padding:10px;
+    width: 300px;
+    height: 40px;
+    border: 0.1px solid #F58220;
+    border-radius: 5px;
+}
+.cancel-link{
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    padding-top:10px;
+    color: gray;
+    background-color: #ffffff;
+    width: 300px;
+    height: 30px;
+    border: 0.1px solid #dad9d9;
+    border-radius: 5px;
+}

@@ -36,8 +36,8 @@
       </table>
       <%= render "shared/error", obj: @reservation %>
       <%= f.hidden_field :room_id, value: @room.id %>
-      <div>
-          <%= f.submit "予約する"%>
+      <div class="room-reservation-submit">
+          <%= f.submit "予約する", class: "reservation-submit-button"%>
       </div>
     <% end %>
   </div>
