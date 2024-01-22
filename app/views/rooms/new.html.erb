@@ -1,46 +1,42 @@
-<h3 class="back">新規追加</h3>
+<h3 class="back">新規登録</h3>
 
 <%= render "shared/error", obj: @room %>
 
 <%= form_with model: @room do |f| %>
   <div class="room">
     <div class="room-content">
-        <p><%= f.label :room_name ,"施設名" %></p>
-        <p class="form-controll">
-            <%= f.text_field :room_name %>
-        </p>
-    </div>
-
-    <div class="room-content">
-      <div>
-        <p><%= f.label :room_detail ,"施設詳細" %></p>
-        <p><%= f.text_area :room_detail %></p>
-      </div>
-    </div>
-
-    <div class="room-content">
-        <p><%= f.label :room_fee ,"料金" %></p>
-        <p class="form-controll">
-            <%= f.text_field :room_fee %>
-        </p>
-    </div>
-
-    <div class="room-content">
-        <p><%= f.label :room_address ,"住所" %></p>
-        <p class="form-controll">
-            <%= f.text_field :room_address %>
+        <p class="form-width"><%= f.label :room_name ,"施設名" %><span class="red">*</span></p>
+        <p>
+            <%= f.text_field :room_name, placeholder: "ルーム名を入力", class:"form-controll" %>
         </p>
     </div>
     <div class="room-content">
-      <%= f.label :room_image, "部屋画像" %>
-      <%= f.file_field :room_image %>
+        <p class="form-width"><%= f.label :room_detail ,"施設詳細" %><span class="red">*</span></p>
+        <p>
+          <%= f.text_area :room_detail, placeholder: "施設詳細を入力", class:"form-controll form-controll-detail" %>
+        </p>
+    </div>
+    <div class="room-content">
+        <p class="form-width"><%= f.label :room_fee ,"料金" %><span class="red">*</span></p>
+        <p>
+            <%= f.text_field :room_fee, placeholder: "一日あたりの料金を入力", class:"form-controll" %>
+        </p>
+    </div>
+    <div class="room-content">
+        <p class="form-width"><%= f.label :room_address ,"住所" %><span class="red">*</span></p>
+        <p>
+          <%= f.text_field :room_address, placeholder: "住所を入力", class:"form-controll" %>
+        </p>
+    </div>
+    <div class="room-content">
+      <p class="form-width"><%= f.label :room_image, "部屋画像" %></p>
+      <p><%= f.file_field :room_image %></p>
       <%= f.hidden_field :room_image_cache %>
     </div>
-
     <%= f.hidden_field :user_id, value: @user.id %>
     <div class="save">
-      <p class="button cansell"><%= link_to "キャンセル", rooms_path, class:"link" %></p>
-      <p><%= f.submit "保存", class:"button" %></p>
+      <p><%= f.submit "保存", class:"submit-button" %></p>
+      <p><%= link_to "キャンセル", :back, class:"cancel-link" %></p>
     </div>
   </div>
 

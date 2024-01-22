@@ -186,6 +186,35 @@ footer p {
     border: 0.1px solid #F58220;
     border-radius: 5px;
 }
+// room-new room-edit
+.back {
+    margin-left:10px;
+}
+.room {
+    width: fit-content;
+    margin: 0 auto;
+}
+.room-content{
+    display: flex;
+    gap: 30px;
+}
+.form-controll {
+    width:300px;
+    height: 20px;
+}
+.form-controll-detail {
+    height: 50px;
+}
+.form-width {
+    width:200px;
+}
+.save {
+    width: fit-content;
+    margin: 0 auto;
+}
+.room-button {
+    width:500px;
+}
 // room-own //自分が登録した部屋
 .room-own-image {
     width: 100px;
