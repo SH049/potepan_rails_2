@@ -1,5 +1,5 @@
 <div class="top-list">
-<h3>登録済み一覧</h3>
+<h3 class="back">登録済み一覧</h3>
 </div>
 <table class="table-own">
     <thead>
@@ -34,6 +34,7 @@
             <td>
                 <%= room&.created_at&.strftime('%Y/%m/%d')%>
             </td>
+            <td><%= image_tag 'three-dot-menu.png' %></td>
             <td>
                 <%= link_to "編集", edit_room_path(room)  %>
             </td>

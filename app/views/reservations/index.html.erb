@@ -1,5 +1,5 @@
 <div class="top-list">
-<h3 class="content-title">予約済み一覧</h3>
+<h3 class="back">予約済み一覧</h3>
 </div>
 <table class="table-own">
     <thead>
@@ -42,8 +42,11 @@
                 <td>
                     <%= reservation&.created_at&.strftime('%Y/%m/%d') %></p>
                 </td>
-                <td><%= link_to "再予約", edit_reservation_path(reservation) %></td>
-                <td><%= link_to "削除", reservation, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+                <td id="editDotToggle"><%= image_tag 'three-dot-menu.png', id:"editDotIcon" %></td>
+                <td class="edit-dot-potision"><div id="editDot">
+                <p><%= link_to "再予約", edit_reservation_path(reservation) %></p>
+                <p><%= link_to "削除", reservation, method: :delete, data: { confirm: "本当に削除しますか？" } %></p>
+                </div></td>
             </tr>
         <% end %>
     </tbody>
