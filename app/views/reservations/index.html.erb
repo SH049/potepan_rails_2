@@ -42,11 +42,15 @@
                 <td>
                     <%= reservation&.created_at&.strftime('%Y/%m/%d') %></p>
                 </td>
-                <td id="editDotToggle"><%= image_tag 'three-dot-menu.png', id:"editDotIcon" %></td>
-                <td class="edit-dot-potision"><div id="editDot">
-                <p><%= link_to "再予約", edit_reservation_path(reservation) %></p>
-                <p><%= link_to "削除", reservation, method: :delete, data: { confirm: "本当に削除しますか？" } %></p>
-                </div></td>
+                <td class="edit-dot-potision">
+                    <div class="editDotToggle" data-reservation-id="<%= reservation.id %>">
+                        <%= image_tag 'three-dot-menu.png', class:"editDotIcon" %>
+                    </div>
+                    <div class="editDot" id="editDotReservation<%= reservation.id %>">
+                        <p><%= link_to "再予約", edit_reservation_path(reservation),class:"header-link" %></p>
+                        <p><%= link_to "予約を削除", reservation, method: :delete,class:"red header-link", data: { confirm: "本当に削除しますか？" } %></p>
+                    </div>
+                </td>
             </tr>
         <% end %>
     </tbody>

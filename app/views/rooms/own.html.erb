@@ -34,12 +34,15 @@
             <td>
                 <%= room&.created_at&.strftime('%Y/%m/%d')%>
             </td>
-            <td><%= image_tag 'three-dot-menu.png' %></td>
-            <td>
-                <%= link_to "編集", edit_room_path(room)  %>
-            </td>
-            <td>
-                <%= link_to "削除", room, method: :delete, data: { confirm: "本当に削除しますか？" } %> 
+
+            <td class="edit-dot-potision">
+                <div class="editDotToggle" data-room-id="<%= room.id %>">
+                    <%= image_tag 'three-dot-menu.png', class:"editDotIcon" %>
+                </div>
+                <div class="editDot" id="editDotRoom<%= room.id %>">
+                    <p><%= link_to "編集", edit_room_path(room),class:"header-link" %></p>
+                    <p><%= link_to "施設を削除", room, method: :delete, class:"red header-link", data: { confirm: "本当に削除しますか？" } %></p>
+                </div>
             </td>
         </tr>
         <% end  %>
