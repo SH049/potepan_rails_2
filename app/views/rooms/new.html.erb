@@ -29,8 +29,9 @@
         </p>
     </div>
     <div class="room-content">
-      <p class="form-width"><%= f.label :room_image, "部屋画像" %></p>
-      <p><%= f.file_field :room_image %></p>
+      <p class="form-width">施設画像</p>
+      <p><%= f.label :room_image, "画像アップロード",class:"image-input-button" %></p>
+      <p><%= f.file_field :room_image, class:"image-form" %></p>
       <%= f.hidden_field :room_image_cache %>
     </div>
     <%= f.hidden_field :user_id, value: @user.id %>

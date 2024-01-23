@@ -210,6 +210,22 @@ footer p {
 .form-width {
     width:200px;
 }
+.image-input-button {
+    display: block;
+    background-color: gray;
+    width: 180px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-top: 2px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+  }
+.image-form {
+    display: none;
+}
 .save {
     width: fit-content;
     margin: 0 auto;
