@@ -25,6 +25,16 @@ header {
     text-decoration: none;
     color: rgb(69, 63, 63);
 }
+.logout-header-links {
+    display: flex;
+}
+.logout-header-link {
+    text-decoration: none;
+    color: white;
+    margin:0;
+    vertical-align: middle;
+    padding-right:20px;
+}
 //javascript
 #menuToggle {
     padding-top: 20px;
@@ -330,7 +340,7 @@ footer p {
 }
 
 // account
-// account設定（user-index）
+// account設定 user-index, edit, intro-index, edit
 .profile-change{
     display: flex;
     justify-content: flex-start;
@@ -348,7 +358,10 @@ footer p {
     width:100px;
 }
 .red {
-    color:rgb(255, 59, 59);
+    color :rgb(255, 59, 59);
+}
+.blue {
+    color :rgb(31, 31, 248);
 }
 .acount-config {
     padding-left: 200px;
@@ -357,4 +370,34 @@ footer p {
     display: flex;
     justify-content: center;
     gap:500px;
+}
+.account-edit-link {
+    text-decoration: none;
+    color :inherit;
+}
+.account-save {
+    display: flex;
+    gap: 10px;
+}
+.account-submit-button {
+    text-decoration: none;
+    color: white;
+    background-color: #F58220;
+    padding:10px;
+    width: 150px;
+    height: 40px;
+    border: 0.1px solid #F58220;
+    border-radius: 5px;
+}
+.acount-cancel-link {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    padding-top:10px;
+    color: gray;
+    background-color: #ffffff;
+    width: 150px;
+    height: 30px;
+    border: 0.1px solid #dad9d9;
+    border-radius: 5px;
 }

@@ -1,14 +1,14 @@
-<h3>設定</h3>
+<h3 class="back">設定</h3>
 
 <div class="profile-change">
     <div class="profile-change-links">
-        <p><%= link_to "アカウント", users_path, class: "profile-change-link red"%></p>
+        <p><%= link_to "アカウント", "/users/account", class: "profile-change-link red"%></p>
         <p><%= link_to "プロフィール", "/users/profile", class: "profile-change-link" %></p>
     </div>
     <div class="acount-config">
         <div class="account-edit">
             <h2>アカウント</h2>
-            <%= link_to "編集", "edit" %>
+            <p class="blue"><i class="fa-solid fa-pencil"></i><%= link_to "編集", "edit",class:"account-edit-link" %></p>
         </div>
         <div class="acount-config-content">
             <div>

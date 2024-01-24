@@ -22,7 +22,7 @@ class RoomsController < ApplicationController
     @room = current_user.rooms.new(room_params)
     if @room.save
       flash[:notice] = "施設を登録しました"
-      redirect_to rooms_path
+      redirect_to room_path(@room)
     else
       @user = current_user
       render "new"
@@ -43,7 +43,7 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     if @room.update(room_params)
       flash[:notice] = "施設を編集しました"
-      redirect_to rooms_path
+      redirect_to room_path(@room)
     else
       render "edit"
     end
