@@ -26,7 +26,7 @@
                 <%= f.password_field :password, autocomplete: "new-password" %>
                 <% if @minimum_password_length %>
                 <br />
-                <em><%= @minimum_password_length %> 文字より長く設定してください</em>
+                <em>(<%= @minimum_password_length %> 字以上で設定してください)</em>
                 <% end %>
             </div>
             <div>

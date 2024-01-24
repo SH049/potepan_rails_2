@@ -76,7 +76,6 @@ header {
 .alert {
     margin: 0;
 }
-
 // フッター
 footer {
     background-color: rgb(16, 9, 75);
@@ -93,6 +92,18 @@ footer {
 footer p {
     padding-left: 30px;
     margin: 0;
+}
+// log in
+.log-in {
+    margin: 0 auto;
+    width:fit-content;
+}
+.log-in > h2 {
+    text-align: center;
+}
+.login-form {
+    width:290px;
+    height:30px;
 }
 
 // 共通検索フォーム
