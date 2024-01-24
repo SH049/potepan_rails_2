@@ -18,7 +18,13 @@
         <div><%= link_to(image_tag("logo.png", class: "header-logo"), '/') %></div>
         <% if user_signed_in? %>
           <div id="menuToggle">
-            <div><%= image_tag(current_user.profile_image.url, size: '30x30') %></div>
+            <div>
+              <% if @user.profile_image? %>
+                <%= image_tag current_user.profile_image.url, size: '30x30' %>
+              <% else %>
+                <%= image_tag ("default_icon.png"), size: '30x30' %>
+              <% end %>
+            </div>
             <div id="menuIcon"><%= current_user.name %><i class="fa-solid fa-chevron-down"></i></div>
           </div>
 
