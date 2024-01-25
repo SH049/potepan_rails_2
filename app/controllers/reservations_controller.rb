@@ -8,7 +8,6 @@ class ReservationsController < ApplicationController
   def new
     @reservation = Reservation.new
     @user = current_user
-    # @room = Room.find(params[:id])
   end
 
   def create
@@ -24,8 +23,6 @@ class ReservationsController < ApplicationController
 
   def show
     @reservation = Reservation.find(params[:id])
-    # @user = current_user
-    # @room = Room.find(params[:id])
   end
 
   def edit
