@@ -37,6 +37,10 @@ class RoomsController < ApplicationController
 
   def edit
     @room = Room.find(params[:id])
+    if @room.user_id != current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to "/"
+    end
   end
 
   def update

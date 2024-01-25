@@ -30,6 +30,10 @@ class ReservationsController < ApplicationController
 
   def edit
     @reservation = Reservation.find(params[:id])
+    if @reservation.user_id != current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to "/"
+    end
   end
 
   def update
