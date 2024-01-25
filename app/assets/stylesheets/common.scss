@@ -1,0 +1,437 @@
+// 共通
+// ヘッダー
+body {
+    margin: 0;
+}
+header {
+    background-color: rgb(16, 9, 75);
+}
+.header-logo {
+    width: 200px;
+    margin:0;
+    padding-top: 20px;
+    padding-left:30px;
+    padding-bottom:20px;
+}
+.header-menus {
+    display: flex;
+    gap:10px;
+    list-style: none;
+}
+.header-menus>:nth-of-type(1){
+    margin-right: auto;
+}
+.header-link {
+    text-decoration: none;
+    color: rgb(69, 63, 63);
+}
+.logout-header-links {
+    display: flex;
+}
+.logout-header-link {
+    text-decoration: none;
+    color: white;
+    margin:0;
+    vertical-align: middle;
+    padding-right:20px;
+}
+//javascript
+#menuToggle {
+    padding-top: 20px;
+    padding-right: 20px;
+    display: flex;
+    cursor: pointer;
+    justify-content:flex-end;
+    gap:5px;
+  }
+#menuIcon {
+    width: 50px;
+    height: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+}
+#menu {
+    display: none;
+    z-index: 7;
+    position: absolute;
+    top: 55px;
+    right: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#menu p {
+    display: block;
+    padding: 8px 10px;
+    color: #333;
+    font-size: 14px;
+}
+#menu p:nth-child(2), p:nth-child(4){
+    border-bottom: 1px solid #ccc;
+}
+
+.notice {
+    margin: 0;
+}
+.alert {
+    margin: 0;
+}
+// フッター
+footer {
+    background-color: rgb(16, 9, 75);
+    height:200px;
+    color: white;
+    margin-top: 50px;
+}
+.footer-logo{
+    margin: 0;
+    width: 200px;
+    padding-top: 20px;
+    padding-left:18px;
+}
+footer p {
+    padding-left: 30px;
+    margin: 0;
+}
+// log in
+.log-in {
+    margin: 0 auto;
+    width:fit-content;
+}
+.log-in > h2 {
+    text-align: center;
+}
+.login-form {
+    width:290px;
+    height:30px;
+}
+
+// 共通検索フォーム
+.common-search-form {
+    background-color: rgb(164, 153, 153);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.common-search-form-text {
+    border: rgb(167, 167, 167) 0.5px solid;
+    border-radius: 5px;
+    width: 250px;
+    height: 40px;
+    margin: 30px 0;
+}
+.common-search-form-button {
+    width: 100px;
+    height: 40px;
+    border: rgb(206, 203, 203) 0.5px solid;
+    border-radius: 5px;
+    margin: 30px 0;
+}
+// 各ページ
+// room
+// room-index
+.room-count {
+    margin-left: 5%;
+}
+.room-index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.each-room {
+    background-color: rgb(214, 209, 209);
+    width: 380px;
+    margin-bottom:50px;
+    border-radius: 5%;
+}
+.each-room-image {
+    margin: 0;
+    border-radius: 5% 5% 0 0;
+    width: 380px;
+    height: 250px;
+}
+.each-room-contents {
+    margin-left: 45px;
+}
+.each-room-detail {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-bottom: 10px;
+}
+.each-room-button {
+    text-decoration: none;
+    color: white;
+    background-color: #F58220;
+    padding:10px;
+    width: 300px;
+    height: 40px;
+    border: 0.1px solid #F58220;
+    border-radius: 5px;
+}
+// room-show
+.room-edit {
+    display: flex;
+    justify-content: space-between;
+}
+.room-edit-link {
+    text-decoration: none;
+    color :inherit;
+    margin-right:10px;
+}
+.back-link {
+    margin-left: 10px;
+    text-decoration: none;
+    color: rgb(53, 53, 255);
+}
+.room-reservation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.room-reservation-image {
+    width: 500px;
+    height: 300px;
+}
+.room-reservation-content {
+    background-color: #fccea6;
+    padding:10px 50px;
+}
+.room-reservation-name {
+    display: flex;
+    justify-content: space-between;
+}
+.room-reservation-table th {
+    text-align: left;
+}
+.room-reservation-submit {
+    padding-top:10px;
+}
+.reservation-submit-button {
+    text-decoration: none;
+    color: white;
+    background-color: #F58220;
+    padding:10px;
+    width: 430px;
+    height: 40px;
+    border: 0.1px solid #F58220;
+    border-radius: 5px;
+}
+// room-new room-edit
+.back {
+    margin-left:10px;
+}
+.room {
+    width: fit-content;
+    margin: 0 auto;
+}
+.room-content{
+    display: flex;
+    gap: 30px;
+}
+.form-controll {
+    width:300px;
+    height: 20px;
+}
+.form-controll-detail {
+    height: 50px;
+}
+.form-width {
+    width:200px;
+}
+.image-input-button {
+    display: block;
+    background-color: gray;
+    width: 180px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-top: 2px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+  }
+.image-form {
+    display: none;
+}
+.save {
+    width: fit-content;
+    margin: 0 auto;
+}
+.room-button {
+    width:500px;
+}
+// room-own //自分が登録した部屋
+.room-own-image {
+    width: 100px;
+    height: 60px;
+}
+.table-own {
+    margin: 0 auto;
+
+}
+.table-own th {
+    text-align: left;
+    padding-left:50px;
+}
+.table-own td {
+    text-align: left;
+    padding-left:50px;
+    padding-bottom:20px;
+}
+//reservation
+//reservation-edit
+.room-reservation-edit {
+    width:500px;
+    margin: 0 auto;
+}
+.room-reservation-edit-content {
+    background-color: #fccea6;
+    width:500px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+.room-reservation-edit-chekin {
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+}
+.room-reservation-edit-form-p {
+    margin: 0;
+}
+.room-reservation-edit-chekin p {
+    line-height: 1px;
+}
+.room-reservation-edit-form {
+    width:300px;
+}
+.submit-button {
+    text-decoration: none;
+    color: white;
+    background-color: #F58220;
+    padding:10px;
+    width: 300px;
+    height: 40px;
+    border: 0.1px solid #F58220;
+    border-radius: 5px;
+}
+.cancel-link{
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    padding-top:10px;
+    color: gray;
+    background-color: #ffffff;
+    width: 300px;
+    height: 30px;
+    border: 0.1px solid #dad9d9;
+    border-radius: 5px;
+}
+//reservation-index, room-own javascript
+.editDotToggle {
+    display: flex;
+    cursor: pointer;
+    justify-content:flex-end;
+    gap:5px;
+}
+.editDotIcon {
+    width: 5px;
+}
+.edit-dot-potision{
+    position: relative;
+}
+.editDot {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.editDot p {
+    width:80px;
+    padding-left:5px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+}
+
+// account
+// account設定 user-index, edit, intro-index, edit
+.profile-change{
+    display: flex;
+    justify-content: flex-start;
+}
+.profile-change-links p{
+    margin: 0;
+    padding-left:10px;
+}
+.profile-change-link {
+    display: block;
+    border:1px solid rgb(184, 176, 176);
+    text-decoration: none;
+    color:black;
+    padding:10px;
+    width:100px;
+}
+.red {
+    color :rgb(255, 59, 59);
+}
+.blue {
+    color :rgb(31, 31, 248);
+}
+.acount-config {
+    padding-left: 20%;
+}
+.account-edit {
+    display: flex;
+    justify-content: flex-start;
+    gap: 80%;
+    white-space: nowrap;
+}
+.link-reset {
+    text-decoration: none;
+    color :inherit;
+}
+.account-save {
+    display: flex;
+    gap: 10px;
+}
+.account-submit-button {
+    text-decoration: none;
+    color: white;
+    background-color: #F58220;
+    padding:10px;
+    width: 150px;
+    height: 40px;
+    border: 0.1px solid #F58220;
+    border-radius: 5px;
+}
+.acount-cancel-link {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    padding-top:10px;
+    color: gray;
+    background-color: #ffffff;
+    width: 150px;
+    height: 30px;
+    border: 0.1px solid #dad9d9;
+    border-radius: 5px;
+}
+
+// @media(max-width: 767px) {
+//     //account
+//     .acount-config {
+//         padding-left: 100px;
+//     }
+//     .account-edit {
+//         display: flex;
+//         justify-content: center;
+//         gap:300px;
+//     }
+// }

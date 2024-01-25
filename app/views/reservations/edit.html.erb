@@ -1,0 +1,45 @@
+<h3 class="back">再予約する</h3>
+
+<%= render "shared/error", obj: @reservation %>
+
+<div class="room-reservation-edit">
+  <div>
+    <% if @reservation.room.room_image? %>
+      <%= image_tag @reservation.room.room_image.url, class:'room-reservation-image' %>
+    <% else %>
+      <%= image_tag ("default_room.png"), class:'room-reservation-image' %>
+    <% end %>
+  </div>
+  <div class="room-reservation-edit-content">
+    <div class="room-reservation-name">
+      <p><%= @reservation.room.room_name %></p>
+      <p>¥<%= @reservation.room.room_fee.to_s(:delimited) %></p>
+    </div>
+    <p><%= @reservation.room.room_address %></p>
+    <p><%= @reservation.room.room_detail %></p>
+    <%= form_with model: @reservation do |f| %>
+      <div class="room-reservation-edit-chekin">
+        <div>
+          <p><%= f.label :checkin, "チェックイン" %></p>
+          <p class="room-reservation-edit-form-p"><%= f.date_field :checkin, class: "room-reservation-edit-form" %></p>
+        </div>
+        <div>
+          <p><%= f.label :checkout, "チェックアウト" %></p>
+          <p class="room-reservation-edit-form-p"><%= f.date_field :checkout, class: "room-reservation-edit-form" %></p>
+        </div>
+        <div>
+          <p><%= f.label :people, "人数" %></p>
+          <p class="room-reservation-edit-form-p"><%= f.text_field :people, class: "room-reservation-edit-form" %></p>
+        </div>
+        <div>
+          <p><%= f.submit "再予約する", class:"submit-button" %></p>
+        </div>
+        <div>
+          <%= link_to "キャンセル", reservations_path, class:"cancel-link" %>
+        </div>
+      </div>
+      <%= render "shared/error", obj: @reservation %>
+      
+    <% end %>
+  </div>
+ </div>

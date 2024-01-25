@@ -1,0 +1,32 @@
+<div class="log-in">
+  <h2>新規登録</h2>
+
+  <%= form_with model: @user, url: user_registration_path do |f| %>
+    <%= render "shared/error", obj: @user %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"login-form" %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autocomplete: "email", class:"login-form" %> 
+    </div>
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> 字以上で設定してください)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", class:"login-form" %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"login-form" %>
+    </div>
+    <div class="login-link">
+      <p><%= f.submit "新しいアカウントを作成", class:"submit-button" %></p>
+      <p><%= link_to "アカウントをお持ちの方はログイン", "/users/sign_in", class:"cancel-link" %></p>
+    </div>
+  <% end %>
+</div>
+<%# <%= render "devise/shared/links" %>

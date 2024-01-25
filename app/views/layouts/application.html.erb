@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ReservationApp</title>
+    <title>ScheduleBook</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://kit.fontawesome.com/16220d5f5d.js" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'common' %>
   </head>
 
   <body>
+    <header>  
+      <div class="header-menus">
+        <div><%= link_to(image_tag("logo.png", class: "header-logo"), '/') %></div>
+        <% if user_signed_in? %>
+          <div id="menuToggle">
+            <div>
+              <% if current_user.profile_image? %>
+                <%= image_tag current_user.profile_image.url, size: '30x30' %>
+              <% else %>
+                <%= image_tag ("default_icon.png"), size: '30x30' %>
+              <% end %>
+            </div>
+            <div id="menuIcon"><%= current_user.name %><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+
+          <div id="menu">
+            <p><%= link_to "施設の新規登録", new_room_path, class:"header-link" %></a>
+            <p><%= link_to "アカウント設定", '/users/account', class:"header-link" %></p>
+            <p><%= link_to "予約一覧", reservations_path, class:"header-link" %></p>
+            <p><%= link_to "登録一覧", '/rooms/own', class:"header-link" %></p>
+            <p><%= link_to "ログアウト", destroy_user_session_path, class:"header-link", method: :delete %></p>
+          </div>
+        <% else %>
+          <div class="logout-header-links">
+            <p><%= link_to "ログイン", new_user_session_path, class:"logout-header-link" %></p>
+            <p>><%= link_to "新規登録", new_user_registration_path, class:"logout-header-link" %></p>
+          </div>
+        <% end %>
+      </div>
+    </header>
+    <%# フラッシュメッセージ %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
+    <footer>
+      <div class="footer-logo"><%= link_to(image_tag("logo.png", class: "footer-logo"), '/') %></div>
+      <p>Copyright © Potepan Share 2024 All rights reserved</p>
+    </footer>
   </body>
 </html>

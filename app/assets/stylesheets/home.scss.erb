@@ -1,0 +1,74 @@
+.first-view {
+    background-image: url("<%= asset_path('cover-lg.jpeg') %>");
+    background-size: cover;
+    height: 800px;
+    text-align:center;
+    position: relative;
+}
+.notice {
+    position: absolute;
+}
+.alert {
+    position: absolute;
+}
+.first-view h1 {
+    color: white;
+    font-size: 50px;
+    display: inline-block;
+    padding-top:100px;
+    padding-left: auto;
+    padding-right: auto;
+}
+.search-form {
+    width: fit-content;
+    background-color: rgba( 255, 255, 255, 0.45 );
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.search-form-text {
+    margin: 30px 30px 5px 30px;
+    width: 300px;
+    height: 40px;
+    border: 0.5px solid;
+    border-radius: 5px;
+}
+.search-form-button {
+    color: white;
+    background-color: #F58220;
+    margin: 5px 30px 30px 30px;
+    width: 300px;
+    height: 40px;
+    border: 0.1px solid #F58220;
+    border-radius: 5px;
+}
+
+<%# section %>
+section h2 {
+    display: inline-block;
+    border-bottom: 3px solid #b2d5de;
+    margin-left:50px;
+}
+.area-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+.each-area {
+    position: relative;
+}
+.each-area-image {
+    border-radius: 10px;
+    width: 300px;
+    height: 400px;
+}
+.each-area-text {
+    color: white;
+    font-size: 25px;
+    position:  absolute;
+    left: 10px;
+    bottom:10px;
+}

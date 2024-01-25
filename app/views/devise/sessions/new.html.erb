@@ -1,0 +1,21 @@
+<div class="log-in">
+  <h2>ログイン</h2>
+
+  <%= form_with model: @user, url: user_session_path do |f| %>
+    <%= render "shared/error", obj: @user %>
+    <div class="field">
+      <p><%= f.label :email %></p>
+      <p><%= f.email_field :email, placeholder: "メールアドレスを入力", autofocus: true, autocomplete: "email", class:"login-form" %></p>
+    </div>
+
+    <div class="field">
+      <p><%= f.label :password %></p>
+      <p><%= f.password_field :password, placeholder: "パスワードを入力", autocomplete: "current-password", class:"login-form" %></p>
+    </div>
+    <div class="login-link">
+      <p><%= f.submit "ログイン", class:"submit-button" %></p>
+      <p><%= link_to "新しいアカウントを作成", "/users/sign_up", class:"cancel-link" %></p>
+    </div>
+  <% end %>
+</div>
+<%# <%= render "devise/shared/links" %>

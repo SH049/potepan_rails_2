@@ -1,0 +1,45 @@
+<h3 class="back">プロフィール</h3>
+
+<div class="profile-change">
+    <div class="profile-change-links">
+        <p><%= link_to "アカウント", "/users/account", class: "profile-change-link"%></p>
+        <p><%= link_to "プロフィール", "/users/profile", class: "profile-change-link red" %></p>
+    </div>
+    <div class="acount-config">
+        <div class="account-edit">
+            <h2>プロフィール</h2>
+            <p></p>
+        </div>
+        <%= form_with model: @user, url: intro_path(@user), local: true do |f| %>
+        <%= render "shared/error", obj: @user %>
+        <div class="acount-config-content">
+          <div>
+            <%= f.label :name %><span class="red">*</span><br>
+            <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+          </div>
+          <div class="field">
+            <%= f.label :profile %><br>
+            <%= f.text_field :profile, autofocus: true, autocomplete: "profile" %>
+          </div>
+          <div>
+            <h3>アイコン</h3>
+            <p>
+            <% if @user.profile_image? %>
+              <%= image_tag @user.profile_image.url, size: '30x30' %>
+            <% else %>
+              <%= image_tag ("default_icon.png"), size: '30x30' %>
+            <% end %>
+            </p>
+            <p><%= f.label :profile_image, "画像アップロード",class:"image-input-button" %></p>
+            <%= f.file_field :profile_image, autofocus: true, class:"image-form" %>
+            <%= f.hidden_field :profile_image_cache %>
+          </div>
+          <%= f.hidden_field :current_password, autocomplete: "current-password" %>
+          <div class="account-save">
+            <p><%= f.submit "保存", class:"account-submit-button" %></p>
+            <p><%= link_to "キャンセル", "/users/profile", class:"acount-cancel-link" %></p>
+          </div>
+        </div>
+        <% end %>
+    </div>
+</div>

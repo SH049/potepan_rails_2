@@ -1,0 +1,57 @@
+<div class="top-list">
+<h3 class="back">予約済み一覧</h3>
+</div>
+<table class="table-own">
+    <thead>
+        <tr>
+            <th>画像</th>
+            <th>施設名</th>
+            <th>紹介文</th>
+            <th>合計金額</th>
+            <th>チェックイン</th>
+            <th>チェックアウト</th>
+            <th>予約確定日時</th>
+            <th>編集</th>
+        </tr>    
+    <thead>
+    <tbody>
+        <% @reservations.each do |reservation| %>
+            <tr>
+                <td>
+                    <% if reservation.room.room_image? %>
+                    <%= image_tag reservation.room.room_image.url, class:'room-own-image' %>
+                        <% else %>
+                    <%= image_tag ("default_room.png"), class:'room-own-image' %>
+                        <% end %>
+                </td>
+                <td class="blue">
+                    <%= link_to reservation.room.room_name, room_path(reservation.room), class:"link-reset" %>
+                </td>
+                <td>
+                    <%= reservation.room.room_detail %>
+                </td>
+                <td>
+                    ¥<%= (reservation.room.room_fee * reservation.people * (reservation&.checkout - reservation&.checkin).to_i).to_s(:delimited) %>
+                </td>
+                <td>
+                    <%= reservation&.checkin&.strftime('%Y/%m/%d') %>
+                </td>
+                <td>
+                    <%= reservation&.checkout&.strftime('%Y/%m/%d') %>
+                </td>
+                <td>
+                    <%= reservation&.created_at&.strftime('%Y/%m/%d') %></p>
+                </td>
+                <td class="edit-dot-potision">
+                    <div class="editDotToggle" data-reservation-id="<%= reservation.id %>">
+                        <%= image_tag 'three-dot-menu.png', class:"editDotIcon" %>
+                    </div>
+                    <div class="editDot" id="editDotReservation<%= reservation.id %>">
+                        <p><%= link_to "再予約", edit_reservation_path(reservation),class:"header-link" %></p>
+                        <p><%= link_to "予約を削除", reservation, method: :delete,class:"red header-link", data: { confirm: "本当に削除しますか？" } %></p>
+                    </div>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
