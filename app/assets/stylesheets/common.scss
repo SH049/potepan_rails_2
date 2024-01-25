@@ -171,6 +171,15 @@ footer p {
     border-radius: 5px;
 }
 // room-show
+.room-edit {
+    display: flex;
+    justify-content: space-between;
+}
+.room-edit-link {
+    text-decoration: none;
+    color :inherit;
+    margin-right:10px;
+}
 .back-link {
     margin-left: 10px;
     text-decoration: none;
@@ -178,6 +187,7 @@ footer p {
 }
 .room-reservation {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
 }
@@ -382,7 +392,7 @@ footer p {
     justify-content: center;
     gap:500px;
 }
-.account-edit-link {
+.link-reset {
     text-decoration: none;
     color :inherit;
 }

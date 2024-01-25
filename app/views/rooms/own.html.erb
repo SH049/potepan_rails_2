@@ -22,8 +22,8 @@
                     <%= image_tag ("default_room.png"), class:'room-own-image' %>
                 <% end %>
             </td>
-            <td>
-                <%= room.room_name %>
+            <td class="blue">
+                <%= link_to room.room_name, room_path(room), class:"link-reset" %>
             </td>
             <td>
                 <%= room.room_detail %>

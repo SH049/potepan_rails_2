@@ -24,8 +24,8 @@
                     <%= image_tag ("default_room.png"), class:'room-own-image' %>
                         <% end %>
                 </td>
-                <td>
-                    <%= reservation.room.room_name %>
+                <td class="blue">
+                    <%= link_to reservation.room.room_name, room_path(reservation.room), class:"link-reset" %>
                 </td>
                 <td>
                     <%= reservation.room.room_detail %>

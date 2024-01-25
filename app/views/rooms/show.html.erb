@@ -1,6 +1,11 @@
 <%= render "shared/search" %>
 
+<div class="room-edit">
 <p><%= link_to "\uf060 戻る", :back, class:"fa back-link" %></p>
+<% if current_user.id == @room.user_id %>
+<p class="blue"><i class="fa-solid fa-pencil"></i><%= link_to "編集", edit_room_path(@room), class:"room-edit-link"%></p>
+<% end %>
+</div>
 
 <div class="room-reservation">
   <div>
