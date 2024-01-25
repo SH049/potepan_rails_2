@@ -127,6 +127,10 @@ footer p {
     border-radius: 5px;
     margin: 30px 0;
 }
+
+// .field_with_errors {
+//     display: contents;
+//   }
 // 各ページ
 // room
 // room-index
@@ -385,12 +389,13 @@ footer p {
     color :rgb(31, 31, 248);
 }
 .acount-config {
-    padding-left: 200px;
+    padding-left: 20%;
 }
 .account-edit {
     display: flex;
-    justify-content: center;
-    gap:500px;
+    justify-content: flex-start;
+    gap: 80%;
+    white-space: nowrap;
 }
 .link-reset {
     text-decoration: none;
@@ -422,3 +427,15 @@ footer p {
     border: 0.1px solid #dad9d9;
     border-radius: 5px;
 }
+
+// @media(max-width: 767px) {
+//     //account
+//     .acount-config {
+//         padding-left: 100px;
+//     }
+//     .account-edit {
+//         display: flex;
+//         justify-content: center;
+//         gap:300px;
+//     }
+// }
